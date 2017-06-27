@@ -9,9 +9,9 @@ FROM node:4
 MAINTAINER treban
 
 ####### install #######
-RUN mkdir /opt/pimatic
+RUN mkdir /opt/pimatic-docker
 RUN /usr/bin/env node --version
-RUN cd /opt && npm install pimatic --prefix pimatic --production
+RUN cd /opt && npm install pimatic --prefix pimatic-docker --production
 RUN cd /opt/pimatic/node_modules/pimatic && npm link
 
 ####### autostart #######
