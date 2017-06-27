@@ -27,5 +27,4 @@ ENTRYPOINT ln -s /data/config.json /opt/pimatic-docker/config.json && \
    ln -s /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
    service pimatic start && bash
 
-# Expose pimatic port e.g. 80
 EXPOSE 4242
