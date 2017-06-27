@@ -11,7 +11,6 @@ MAINTAINER treban
 ####### pre #######
 RUN apt-get update
 RUN apt-get install -y curl wget
-RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs build-essential git
 
 ####### install #######
