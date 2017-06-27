@@ -24,7 +24,7 @@ RUN update-rc.d pimatic defaults
 RUN ln -s /data/config.json /opt/pimatic/config.json
 RUN ln -s /data/pimatic-database.sqlite /opt/pimatic/pimatic-database.sqlite
 
-service pimatic start && bash
+CMD service pimatic start && bash
 
 # Expose pimatic port e.g. 80
 EXPOSE 4242
