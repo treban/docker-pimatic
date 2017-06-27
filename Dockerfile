@@ -22,10 +22,10 @@ RUN update-rc.d pimatic defaults
 
 ####### init #######
 RUN mkdir /data/
-CMD ln -s /data/config.json /opt/pimatic-docker/config.json
-CMD ln -s /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite
 
-CMD service pimatic start && bash
+ENTRYPOINT ln -s /data/config.json /opt/pimatic-docker/config.json && \
+   ln -s /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
+   service pimatic start && bash
 
 # Expose pimatic port e.g. 80
 EXPOSE 4242
