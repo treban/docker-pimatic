@@ -3,15 +3,10 @@
 ##################################################################
 
 # base image
-FROM debian
+FROM node:4
 
 # Author
 MAINTAINER treban
-
-####### pre #######
-RUN apt-get update
-RUN apt-get install -y curl wget
-RUN apt-get install -y nodejs nodejs-legacy npm build-essential git
 
 ####### install #######
 RUN mkdir /opt/pimatic
@@ -28,6 +23,8 @@ RUN update-rc.d pimatic defaults
 ####### init #######
 RUN ln -s /data/config.json /opt/pimatic/config.json
 RUN ln -s /data/pimatic-database.sqlite /opt/pimatic/pimatic-database.sqlite
+
+service pimatic start && bash
 
 # Expose pimatic port e.g. 80
 EXPOSE 4242
