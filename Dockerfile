@@ -11,7 +11,7 @@ MAINTAINER treban
 ####### pre #######
 RUN apt-get update
 RUN apt-get install -y curl wget
-RUN apt-get install -y nodejs build-essential git
+RUN apt-get install -y nodejs nodejs-legacy build-essential git
 
 ####### install #######
 RUN mkdir /opt/pimatic
