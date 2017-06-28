@@ -23,8 +23,8 @@ RUN update-rc.d pimatic defaults
 ####### init #######
 RUN mkdir /data/
 
-ENTRYPOINT ln -s /data/config.json /opt/pimatic-docker/config.json && \
-   ln -s /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
+ENTRYPOINT ln -fs /data/config.json /opt/pimatic-docker/config.json && \
+   ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
    service pimatic start && bash
 
 EXPOSE 4242
