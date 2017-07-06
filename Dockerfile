@@ -3,10 +3,10 @@
 # VERSION               0.1
 ##################################################################
 
-LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
-
 # base image
 FROM node:4
+
+LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 ####### install #######
 RUN mkdir /opt/pimatic-docker
