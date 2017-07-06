@@ -27,8 +27,6 @@ RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config
 #HEALTHCHECK --interval=1m -timeout=5s --start-period=2m \
 # CMD curl -f http://localhost/ || exit 1
 
-ENTRYPOINT ["/bin/bash"]
-
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
    service pimatic start && tail -f /dev/null
