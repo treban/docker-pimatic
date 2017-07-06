@@ -1,12 +1,12 @@
 ##################################################################
 # pimatic docker file
+# VERSION               0.1
 ##################################################################
+
+LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 # base image
 FROM node:4
-
-# Author
-MAINTAINER treban
 
 ####### install #######
 RUN mkdir /opt/pimatic-docker
@@ -22,9 +22,15 @@ RUN update-rc.d pimatic defaults
 
 ####### init #######
 RUN mkdir /data/
+RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config.json
 
-ENTRYPOINT ln -fs /data/config.json /opt/pimatic-docker/config.json && \
+#HEALTHCHECK --interval=1m -timeout=5s --start-period=2m \
+# CMD curl -f http://localhost/ || exit 1
+
+ENTRYPOINT ["/bin/bash"]
+
+CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
-   service pimatic start && bash
+   service pimatic start && tail -f /dev/null
 
-EXPOSE 4242
+EXPOSE 80
