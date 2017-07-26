@@ -23,15 +23,18 @@ RUN update-rc.d pimatic defaults
 ####### init #######
 RUN mkdir /data/
 RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config.json
+RUN touch /data/pimatic-database.sqlite
 
-RUN cd /opt/pimatic-docker/ && \
-    npm install pimatic-cron
+RUN cd /opt/pimatic-docker/ \
+    && npm install pimatic-cron \
+    && npm install pimatic-mobile-frontend
 
 #HEALTHCHECK --interval=1m -timeout=5s --start-period=2m \
 # CMD curl -f http://localhost/ || exit 1
 
+VOLUME ["/data"]
+
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
-   service pimatic start && tail -f /dev/null
-
-EXPOSE 80
+   pimatic.js
+   
