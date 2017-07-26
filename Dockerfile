@@ -24,6 +24,9 @@ RUN update-rc.d pimatic defaults
 RUN mkdir /data/
 RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config.json
 
+run cd /opt/pimatic-docker/ && \
+    npm install pimatic-cron
+
 #HEALTHCHECK --interval=1m -timeout=5s --start-period=2m \
 # CMD curl -f http://localhost/ || exit 1
 
