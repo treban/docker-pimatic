@@ -9,13 +9,13 @@ docker pull treban/pimatic
 docker run -i -t -P -v /path-to-data-on-host:/data treban/pimatic
 
 The container needs a mounted volume in /data.
-In this folder must be placed the config.json and the sql database
+In this folder must be placed the config.json and the sql database.
+The image otherwise uses the default pimatic config and 
+generates a inital sql database
+
 - config.json
 - pimatic-database.sqlite
 
-The image otherwise uses the default pimatic config and 
-generates a inital sql database
- 
 The pimatic app folder is /opt/pimatic-docker.
 The image exposes port 4242.
 
