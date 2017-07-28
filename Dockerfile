@@ -33,7 +33,7 @@ RUN cd /opt/pimatic-docker/ \
     && npm install pimatic-mobile-frontend 
 
 ####### healthcheck #######
-HEALTHCHECK --interval=1m -timeout=5s --start-period=5m \
+HEALTHCHECK --interval=1m --timeout=5s --start-period=5m \
  CMD if [ "$HEALTHCHECK" == "on" ] ; then curl -f http://localhost:${PIMATIC_PORT}/ || exit 1 ; fi 
 
 ####### volume #######
