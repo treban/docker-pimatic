@@ -13,7 +13,7 @@ In this folder must be placed the config.json and the sql database
 - config.json
 - pimatic-database.sqlite
 
-The image uses otherwise the default pimatic config and 
+The image otherwise uses the default pimatic config and 
 generates a inital sql database
  
 The pimatic app folder is /opt/pimatic-docker.
