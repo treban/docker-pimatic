@@ -30,8 +30,7 @@ RUN touch /data/pimatic-database.sqlite
 ####### default plugins #######
 RUN cd /opt/pimatic-docker/ \
     && npm install pimatic-cron \
-    && npm install pimatic-mobile-frontend \\
-    && npm install sqlite3
+    && npm install pimatic-mobile-frontend 
 
 ####### healthcheck #######
 HEALTHCHECK --interval=1m -timeout=5s --start-period=5m \
