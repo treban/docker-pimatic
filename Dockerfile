@@ -42,7 +42,7 @@ VOLUME ["/data"]
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
-   export PIMATIC_PORT=`grep port /data/config.json | cut -d":" -f2 | tr -d ' '` &&  \
+   export PIMATIC_PORT=`grep port /data/config.json | head -1 | cut -d":" -f2 | tr -d ' '` &&  \
    pimatic.js
 
 ####### environment variable #######
