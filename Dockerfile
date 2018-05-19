@@ -21,7 +21,7 @@ RUN update-rc.d pimatic defaults
 
 ####### init #######
 RUN mkdir /data/
-RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config.json
+COPY ./config.json /data/config.json
 
 RUN touch /data/pimatic-database.sqlite
 
