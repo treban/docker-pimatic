@@ -22,8 +22,6 @@ RUN update-rc.d pimatic defaults
 ####### init #######
 RUN mkdir /data/
 RUN cp /opt/pimatic-docker/node_modules/pimatic/config_default.json /data/config.json
-RUN sed -i "s/\"password\": \"\"/\"password\": \"pimatic\"/g" /data/config.json
-RUN sed -i "s/\"port\": 80\"\"/\"port\": 4242/g" /data/config.json
 
 RUN touch /data/pimatic-database.sqlite
 
@@ -32,21 +30,11 @@ RUN cd /opt/pimatic-docker/ \
     && npm install pimatic-cron \
     && npm install pimatic-mobile-frontend 
 
-####### healthcheck #######
-#HEALTHCHECK --interval=1m --timeout=5s --start-period=5m \
- #CMD if [ "$HEALTHCHECK" == "on" ] ; then curl -f http://localhost:${PIMATIC_PORT}/ || exit 1 ; fi 
-
 ####### volume #######
 VOLUME ["/data"]
 
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
-   export PIMATIC_PORT=`grep port /data/config.json | head -1 | cut -d":" -f2 | tr -d ' '` &&  \
    pimatic.js
-
-####### environment variable #######
-ENV HEALTHCHECK off
-
-####### port #######
-EXPOSE 4242
+   
