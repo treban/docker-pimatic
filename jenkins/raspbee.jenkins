@@ -1,12 +1,8 @@
-pipeline {
-    agent {
-        docker { image 'treban/pimatic' }
-    }
-    stages {
+node {
+    /* Requires the Docker Pipeline plugin to be installed */
+    docker.image('treban/pimatic').inside {
         stage('Test') {
-            steps {
-                sh 'node --version'
-            }
+            sh 'node --version'
         }
     }
 }
