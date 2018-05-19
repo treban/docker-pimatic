@@ -1,0 +1,12 @@
+pipeline {
+    agent {
+        docker { image 'treban/pimatic' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
