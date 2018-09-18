@@ -32,6 +32,7 @@ RUN cd /opt/pimatic-docker/ \
 
 ####### volume #######
 VOLUME ["/data"]
+VOLUME ["/opt/pimatic-docker"]
 
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
