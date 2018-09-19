@@ -4,11 +4,16 @@
 ##################################################################
 
 # base image
-FROM node:4.8.7
+FROM ubuntu:14.04
 
 LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 ####### install #######
+RUN apt-get update 
+RUN apt-get update && apt-get upgrade \
+    && apt-get install -y --no-install-recommends npm nodejs \
+    && rm -rf /var/lib/apt/lists/*
+    
 RUN mkdir /opt/pimatic-docker
 RUN cd /opt && npm install pimatic --prefix pimatic-docker --production
 RUN cd /opt/pimatic-docker/node_modules/pimatic && npm link
