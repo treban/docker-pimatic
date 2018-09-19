@@ -4,7 +4,7 @@
 ##################################################################
 
 # base image
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
