@@ -4,7 +4,7 @@
 ##################################################################
 
 # base image
-FROM node:4.7
+FROM node:4.8.7
 
 LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
