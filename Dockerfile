@@ -10,7 +10,7 @@ LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Vers
 
 ####### install #######
 RUN apt-get update && apt-get upgrade 
-RUN apt-get install -y --no-install-recommends npm nodejs git \
+RUN apt-get install -y --no-install-recommends npm nodejs git make libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
     && rm -rf /var/lib/apt/lists/*
     
 RUN mkdir /opt/pimatic-docker
