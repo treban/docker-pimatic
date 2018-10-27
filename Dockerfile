@@ -9,7 +9,7 @@ FROM ubuntu:16.04
 LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 ####### install #######
-RUN apt-get update && apt-get upgrade 
+RUN apt-get update && apt-get -y upgrade 
 RUN apt-get install -y --no-install-recommends npm nodejs git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
     libusb-dev libudev-dev curl \
