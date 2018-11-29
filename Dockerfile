@@ -27,7 +27,6 @@ RUN mkdir /data/
 COPY ./config.json /data/config.json
 
 RUN touch /data/pimatic-database.sqlite
-RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 ####### volume #######
 VOLUME ["/data"]
