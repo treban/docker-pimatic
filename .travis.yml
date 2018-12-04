@@ -6,11 +6,10 @@ services:
   - docker
 
 install:
-  - echo "install nothing!"
-
-script:
-  - echo "no tests!"
-
-after_success:
   - docker --version  # document the version travis is using
   - docker build -t docker-pimatic .
+
+script:
+  - docker run docker-pimatic
+#after_success:
+
