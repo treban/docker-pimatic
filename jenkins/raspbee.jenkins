@@ -1,8 +1,0 @@
-node {
-    /* Requires the Docker Pipeline plugin to be installed */
-    docker.image('treban/pimatic').inside {
-        stage('Test') {
-            sh 'node --version'
-        }
-    }
-}
