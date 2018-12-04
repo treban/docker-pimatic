@@ -10,6 +10,6 @@ install:
   - docker build -t docker-pimatic .
 
 script:
-  - docker run docker-pimatic
+  - docker run --rm treban/pimatic nodejs -v
 #after_success:
 
