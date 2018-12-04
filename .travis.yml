@@ -1,12 +1,16 @@
-language: ruby
+sudo: required
+
+language: node
 
 services:
   - docker
 
-jobs:
-include:
-  - stage: build docker image
-    script:
-    - docker build -t treban/pimatic .
-  - stage: test
-    script: docker run --rm treban/pimatic
+install:
+  - echo "install nothing!"
+
+script:
+  - echo "no tests!"
+
+after_success:
+  - docker --version  # document the version travis is using
+  - docker build -t docker-pimatic .
