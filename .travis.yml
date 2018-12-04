@@ -1,0 +1,12 @@
+language: ruby
+
+services:
+  - docker
+
+jobs:
+include:
+  - stage: build docker image
+    script:
+    - docker build -t treban/pimatic .
+  - stage: test
+    script: docker run --rm treban/pimatic
