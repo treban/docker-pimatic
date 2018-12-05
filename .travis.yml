@@ -1,11 +1,9 @@
 sudo: required
+
 services:
 - docker
-language: bash
+
 script:
-- |
-  curl https://get.docker.com | sh
-  docker version
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 - docker build -t docker-pimatic .
 # test image
