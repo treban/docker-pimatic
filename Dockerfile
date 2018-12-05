@@ -9,7 +9,7 @@ FROM arm32v7/ubuntu:16.04
 LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 ####### install #######
-RUN apt-get update && apt-get -y upgrade
+#RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - \
     && apt-get install -y nodejs
