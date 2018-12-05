@@ -3,8 +3,10 @@ sudo: required
 services:
 - docker
 
+install:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - docker build -t docker-pimatic .
+
 script:
-- docker run --rm --privileged multiarch/qemu-user-static:register --reset
-- docker build -t docker-pimatic .
-# test image
-- docker run docker-pimatic
+  - docker run --rm docker-pimatic nodejs -v
+#after_success:
