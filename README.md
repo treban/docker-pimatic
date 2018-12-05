@@ -1,5 +1,9 @@
 ## docker-pimatic
 
+[![Build Status](https://travis-ci.org/treban/docker-pimatic.svg?branch=rpi3)](https://travis-ci.org/treban/docker-pimatic)
+[![This image on DockerHub](https://img.shields.io/docker/pulls/treban/pimatic-rpi.svg)](https://hub.docker.com/r/treban/pimatic-rpi/)
+
+
 ### Pull the image
 
 docker pull treban/pimatic
