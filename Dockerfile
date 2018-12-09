@@ -9,13 +9,13 @@ FROM treban/arm-ubuntu-qemu
 LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.com" Version="0.1"
 
 ####### install #######
-RUN apt-get update && apt-get -y upgrade
+RUN apt update && apt-get -y upgrade
 RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - \
     && apt-get install -y nodejs
 RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl
+    libusb-dev libudev-dev curl 
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
@@ -34,4 +34,6 @@ VOLUME ["/opt/pimatic-docker"]
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
+   /etc/init.d/dbus start &&  \
+   /etc/init.d/avahi-daemon start && \
    /usr/bin/nodejs /opt/pimatic-docker/node_modules/pimatic/pimatic.js
