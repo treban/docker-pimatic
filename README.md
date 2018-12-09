@@ -2,7 +2,7 @@
 
 Docker Image for pimatic on intel plattforms.
 
-for raspberry pi  show [here...](https://hub.docker.com/r/treban/pimatic-rpi/)
+for raspberry pi show [here...](https://hub.docker.com/r/treban/pimatic-rpi/)
 
 [![Build Status](https://travis-ci.org/treban/docker-pimatic.svg?branch=master)](https://travis-ci.org/treban/docker-pimatic)
 [![This image on DockerHub](https://img.shields.io/docker/pulls/treban/pimatic.svg)](https://hub.docker.com/r/treban/pimatic/)
@@ -14,11 +14,11 @@ docker pull treban/pimatic
 
 ### Run the container
 
-docker run \
-   -it \
-   --networkmode=host \
-   -v /data-path:/data \
-   --device=/dev/ttyUSB0 \
+docker run \\
+   -it \\
+   --networkmode=host \\
+   -v /data-path:/data \\
+   --device=/dev/ttyUSB0 \\
    treban/pimatic
 
 You can specify a device for homeduino or some other usb devices.
