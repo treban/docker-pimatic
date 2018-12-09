@@ -15,7 +15,7 @@ docker pull treban/pimatic-rpi
 
 docker run \\ \
    -it \\ \
-   --networkmode=host \\ \
+   --network=host \\ \
    -v /data-path:/data \\ \
    --device=/dev/ttyUSB0 \\ \
    treban/pimatic-rpi
