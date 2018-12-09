@@ -8,5 +8,5 @@ install:
   - docker build -t docker-pimatic-rpi .
 
 script:
-  - docker run --rm docker-pimatic-rpi date
+  - docker run --rm docker-pimatic-rpi nodejs -v
 #after_success:
