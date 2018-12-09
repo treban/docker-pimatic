@@ -5,8 +5,8 @@ services:
 
 install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-  - docker build -t docker-pimatic .
+  - docker build -t docker-pimatic-rpi .
 
 script:
-  - docker run --rm docker-pimatic nodejs -v
+  - docker run --rm docker-pimatic-rpi nodejs -v
 #after_success:
