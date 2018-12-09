@@ -14,11 +14,11 @@ docker pull treban/pimatic
 
 ### Run the container
 
-docker run \\
-   -it \\
-   --networkmode=host \\
-   -v /data-path:/data \\
-   --device=/dev/ttyUSB0 \\
+docker run \\ \
+   -it \\ \
+   --network=host \\ \
+   -v /data-path:/data \\ \
+   --device=/dev/ttyUSB0 \\ \
    treban/pimatic
 
 You can specify a device for homeduino or some other usb devices.
