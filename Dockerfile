@@ -19,7 +19,7 @@ RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
-RUN cd /opt && npm install pimatic@0.9.42 --prefix pimatic-docker --production
+RUN cd /opt && npm install pimatic --prefix pimatic-docker --production
 
 ####### init #######
 RUN mkdir /data/
