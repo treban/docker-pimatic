@@ -12,7 +12,7 @@ LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Vers
 RUN apt update && apt-get -y upgrade
 RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl libpcap-dev
+    libusb-dev libudev-dev curl libpcap-dev nodejs npm ca-certificates
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
