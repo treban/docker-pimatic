@@ -6,11 +6,11 @@
 # base image
 FROM ubuntu:19.04
 
-LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.5"
+LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.6"
 
 ####### install #######
 RUN apt update && apt-get -y upgrade
-RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
+RUN apt-get install -y netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
     libusb-dev libudev-dev curl libpcap-dev ca-certificates jq
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
