@@ -12,7 +12,7 @@ LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Vers
 RUN apt update && apt-get -y upgrade
 RUN apt-get install -y netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl libpcap-dev ca-certificates jq
+    libusb-dev libudev-dev curl libpcap-dev ca-certificates jq tzdata
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 RUN rm -rf /var/lib/apt/lists/*
