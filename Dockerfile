@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - \
     && apt-get install -y nodejs
 RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl libpcap-dev ca-certificates
+    libusb-dev libudev-dev curl libpcap-dev ca-certificates tzdata
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
