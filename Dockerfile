@@ -8,6 +8,8 @@ FROM ubuntu:19.04
 
 LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.6"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 ####### install #######
 RUN apt update && apt-get -y upgrade
 RUN apt-get install -y netcat-openbsd git make \
