@@ -32,6 +32,8 @@ RUN touch /data/pimatic-database.sqlite
 VOLUME ["/data"]
 VOLUME ["/opt/pimatic-docker"]
 
+ENV PIMATIC_DAEMONIZED=pm2-docker
+
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
    ln -fs /data/pimatic-database.sqlite /opt/pimatic-docker/pimatic-database.sqlite && \
