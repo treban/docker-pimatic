@@ -4,7 +4,7 @@ services:
 - docker
 
 install:
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset -p yes
   - docker build -t docker-pimatic-rpi .
 
 script:
