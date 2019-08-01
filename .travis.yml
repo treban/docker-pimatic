@@ -10,6 +10,7 @@ install:
   - docker build -t docker-pimatic .
 
 script:
-  - timeout 300s docker run --rm docker-pimatic
+  - docker run --rm --name pimatic-container docker-pimatic
+  - timeout 300s docker logs pimatic-container -f
 #after_success:
 
