@@ -1,12 +1,12 @@
 ##################################################################
 # pimatic docker file
-# VERSION               0.3
+# VERSION               0.7
 ##################################################################
 
 # base image
 FROM ubuntu:16.04
 
-LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.4"
+LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="0.7"
 
 ####### install #######
 RUN apt update && apt-get -y upgrade
@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - \
     && apt-get install -y nodejs
 RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl libpcap-dev ca-certificates tzdata
+    libusb-dev libudev-dev curl libpcap-dev ca-certificates jq tzdata
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
@@ -30,6 +30,8 @@ RUN touch /data/pimatic-database.sqlite
 ####### volume #######
 VOLUME ["/data"]
 VOLUME ["/opt/pimatic-docker"]
+
+ENV PIMATIC_DAEMONIZED=pm2-docker
 
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
