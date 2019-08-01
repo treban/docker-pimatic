@@ -12,7 +12,6 @@ install:
 
 script:  
   - docker ps -a
-  - wget --retry-connrefused --waitretry=5 --read-timeout=20 --timeout=15 -t 15 -O/dev/null localhost:8282
-  - docker logs docker-pimatic
+  - docker logs docker-pimatic -f
 #after_success:
 
