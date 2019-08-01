@@ -8,8 +8,12 @@ services:
 install:
   - docker --version  # document the version travis is using
   - docker build -t docker-pimatic .
+  - docker run -d -p 127.0.0.1:8282:8282 --name docker-pimatic docker-pimatic
 
-script:
-  - docker run --rm docker-pimatic nodejs -v
+script:  
+  - docker ps -a
+  - (timeout 30s docker logs docker-pimatic -f ; exit 0) 
+  - curl -sSf http://localhost:8282 > /dev/null
+
 #after_success:
 
