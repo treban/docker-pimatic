@@ -12,7 +12,7 @@ install:
 
 script:  
   - docker ps -a
-  - ./test.sh
+  - sh ./test.sh
   - docker logs docker-pimatic
 #after_success:
 
