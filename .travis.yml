@@ -10,6 +10,6 @@ install:
   - docker build -t docker-pimatic .
 
 script:
-  - docker run --rm docker-pimatic nodejs -v
+  - timeout 300s docker run --rm docker-pimatic
 #after_success:
 
