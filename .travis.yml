@@ -12,6 +12,6 @@ install:
 
 script:  
   - docker ps -a
-  - docker logs pimatic-container -f
+  - docker logs docker-pimatic --follow
 #after_success:
 
