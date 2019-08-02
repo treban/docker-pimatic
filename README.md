@@ -12,6 +12,13 @@ for raspberry pi show [here...](https://hub.docker.com/r/treban/pimatic-rpi/)
 
 docker pull treban/pimatic
 
+### TAGs 
+
+* treban/pimatic:node4 = treban/pimatic:latest = treban/pimatic \
+    pimatic with node4 base image
+* treban/pimatic:node10 \
+    pimatic with node10 base image
+
 ### Run the container
 
 docker run \\ \
