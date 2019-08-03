@@ -10,9 +10,9 @@ LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.
 
 ####### install #######
 RUN apt update && apt-get -y upgrade
-RUN apt-get install -y --no-install-recommends netcat-openbsd git make \
+RUN apt-get install -y netcat-openbsd git make \
     build-essential libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan \
-    libusb-dev libudev-dev curl libpcap-dev nodejs npm ca-certificates
+    libusb-dev libudev-dev curl libpcap-dev nodejs npm ca-certificates tzdata jq
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker

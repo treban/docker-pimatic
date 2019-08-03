@@ -4,9 +4,13 @@ services:
 - docker
 
 install:
-  - docker run --rm --privileged multiarch/qemu-user-static --reset --preserve yes
+  - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
   - docker build -t docker-pimatic-rpi .
+  - docker run -d -p 127.0.0.1:8282:8282 --name docker-pimatic-rpi docker-pimatic-rpi
 
 script:
-  - docker run --rm docker-pimatic-rpi nodejs -v
+  - docker ps -a
+  - (timeout 30s docker logs docker-pimatic -f ; exit 0)
+  - curl -sSf http://localhost:8282 > /dev/null
+
 #after_success:
