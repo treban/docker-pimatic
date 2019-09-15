@@ -14,10 +14,10 @@ docker pull treban/pimatic
 
 ### TAGs 
 
-* treban/pimatic:node4 = treban/pimatic:latest = treban/pimatic \
-    pimatic with node4 base image
-* treban/pimatic:node10 \
+* treban/pimatic:node10 = treban/pimatic:latest = treban/pimatic \
     pimatic with node10 base image
+* treban/pimatic:node4 \
+    pimatic with node4 base image
 
 ### Run the container
 
