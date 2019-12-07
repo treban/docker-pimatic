@@ -1,12 +1,12 @@
 ##################################################################
 # pimatic docker file
-# VERSION               0.3
+# VERSION               1.0
 ##################################################################
 
 # base image
 FROM arm32v7/ubuntu
 
-LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.com" Version="0.3"
+LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.com" Version="1.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -32,6 +32,8 @@ RUN touch /data/pimatic-database.sqlite
 ####### volume #######
 VOLUME ["/data"]
 VOLUME ["/opt/pimatic-docker"]
+
+ENV PIMATIC_DAEMONIZED=pm2-docker
 
 ####### command #######
 CMD ln -fs /data/config.json /opt/pimatic-docker/config.json && \
