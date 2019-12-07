@@ -8,6 +8,11 @@ FROM arm32v7/ubuntu
 
 LABEL Description="Pimatic docker image for rpi3" Maintainer="trebankosta@gmail.com" Version="0.3"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+####### set default timezone ######
+RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
 ####### install #######
 RUN apt update && apt-get -y upgrade
 RUN apt-get install -y netcat-openbsd git make \
@@ -16,7 +21,7 @@ RUN apt-get install -y netcat-openbsd git make \
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/pimatic-docker
-RUN cd /opt && npm install pimatic@0.9.42 --prefix pimatic-docker --production
+RUN cd /opt && npm install pimatic --prefix pimatic-docker --production
 
 ####### init #######
 RUN mkdir /data/
