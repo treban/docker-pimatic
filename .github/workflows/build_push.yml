@@ -4,7 +4,7 @@ name: 'build images'
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 jobs:
   docker:
@@ -17,7 +17,7 @@ jobs:
         id: prep
         run: |
           DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*-}
-          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${GITHUB_REF#refs/tags/v}
           TAGS="${DOCKER_IMAGE}:${VERSION}
           TAGS="$TAGS,${DOCKER_IMAGE}:latest"
 
