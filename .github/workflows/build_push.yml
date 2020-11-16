@@ -18,8 +18,12 @@ jobs:
         run: |
           DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*-}
           VERSION=${GITHUB_REF#refs/tags/v}
-          TAGS="${DOCKER_IMAGE}:${VERSION}
+          TAGS="${DOCKER_IMAGE}:${VERSION}"
           TAGS="$TAGS,${DOCKER_IMAGE}:latest"
+          
+          echo $DOCKER_IMAGE
+          echo $VERSION
+          echo $TAGS
 
           # Set output parameters.
           echo ::set-output name=tags::${TAGS}
