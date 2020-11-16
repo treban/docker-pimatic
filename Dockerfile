@@ -1,12 +1,13 @@
 ##################################################################
 # pimatic docker file
-# VERSION              1.0 
 ##################################################################
+
+ARG VERSION
 
 # base image
 FROM node:10
 
-LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version="1.0"
+LABEL Description="Pimatic docker image" Maintainer="trebankosta@gmail.com" Version=$VERSION
 
 ENV DEBIAN_FRONTEND=noninteractive
 
