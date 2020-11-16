@@ -1,8 +1,8 @@
 ## docker-pimatic
 
-Docker Image for pimatic on intel plattforms.
+Docker Image for pimatic.
 
-for raspberry pi show [here...](https://hub.docker.com/r/treban/pimatic-rpi/)
+The image is a multi-arch image for amd64/arm/arm64
 
 [![Build Status](https://travis-ci.org/treban/docker-pimatic.svg?branch=master)](https://travis-ci.org/treban/docker-pimatic)
 [![This image on DockerHub](https://img.shields.io/docker/pulls/treban/pimatic.svg)](https://hub.docker.com/r/treban/pimatic/)
@@ -11,13 +11,6 @@ for raspberry pi show [here...](https://hub.docker.com/r/treban/pimatic-rpi/)
 ### Pull the image
 
 docker pull treban/pimatic
-
-### TAGs 
-
-* treban/pimatic:node10 = treban/pimatic:latest = treban/pimatic \
-    pimatic with node10 base image
-* treban/pimatic:node4 \
-    pimatic with node4 base image
 
 ### Run the container
 
